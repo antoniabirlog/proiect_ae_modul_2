@@ -9,11 +9,9 @@ app.all('*', (req, res) => {
 });  
 app.get('/hello', (req, res) => res.send('Hello World!'))
 
-app.post('/api/userCreate', (req, res) => {
+app.get('/api/userCreate', (req, res) => {
 	console.log('done')
-    res.json({
-        data: req.body
-    })
+    
 	
 })
 
