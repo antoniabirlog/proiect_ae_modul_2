@@ -23,10 +23,7 @@ export class RootComponent implements OnInit {
   
    onSubmit(){
     if(this.userForm.valid){
-      this.http.post('https://form-app-registration.herokuapp.com/api/userCreate', this.userForm.value)
-      .subscribe((response)=>{
-        console.log('repsonse ',response);
-      })
+      console.log('succes');
     }
   }
   
