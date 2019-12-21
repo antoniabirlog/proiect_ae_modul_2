@@ -2,7 +2,10 @@ var PORT = process.env.PORT || 8080
 const express = require('express')
 const app = express()
 const path = require('path')
+var bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist/form-app/'));  
 app.get('*', (req, res) => {  
   res.status(200).sendFile(__dirname + '/dist/form-app/index.html');  
