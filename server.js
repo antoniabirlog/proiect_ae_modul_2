@@ -4,14 +4,16 @@ const app = express()
 const path = require('path')
 
 app.use(express.static(__dirname + '/dist/form-app/'));  
-app.all('*', (req, res) => {  
+app.get('*', (req, res) => {  
   res.status(200).sendFile(__dirname + '/dist/form-app/index.html');  
 });  
 app.get('/hello', (req, res) => res.send('Hello World!'))
 
-app.get('/api/userCreate', (req, res) => {
+app.post('/api/userCreate', (req, res) => {
 	console.log('done')
-    
+    res.json({
+        data: req.body
+    })
 	
 })
 
