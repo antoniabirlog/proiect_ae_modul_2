@@ -28,6 +28,16 @@ app.get('/', (req, res) => {
   
 });  
 
+app.get('/insert', async(req,res)=>{
+	pool.query(
+  "INSERT INTO test_table VALUES(2,'world')",
+  (err, res) => {
+    console.log(err, res);
+    pool.end();
+  }
+);
+});
+
 app.get('/db', async(req,res)=>{
 	try{
 		const client = await pool.connect();
@@ -43,6 +53,13 @@ app.get('/hello', (req, res) => res.send('Hello World!'))
 
 app.post('/api/userCreate', (req, res) => {
 	console.log('done')
+	pool.query(
+  "INSERT INTO test_table VALUES(3,'mine')",
+  (err, res) => {
+    console.log(err, res);
+    pool.end();
+  }
+);
 })
 
 
