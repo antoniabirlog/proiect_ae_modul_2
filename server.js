@@ -2,8 +2,9 @@ var PORT = process.env.PORT || 8080
 const express = require('express')
 const app = express()
 const path = require('path')
+var cors = require('cors')
 var bodyParser = require('body-parser');
-
+app.use(cors())
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist/form-app/'));  
