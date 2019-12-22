@@ -28,15 +28,7 @@ app.get('/', (req, res) => {
   
 });  
 
-app.get('/insert', async(req,res)=>{
-	pool.query(
-  "INSERT INTO test_table VALUES(2,'world')",
-  (err, res) => {
-    console.log(err, res);
-    pool.end();
-  }
-);
-});
+
 
 app.get('/db', async(req,res)=>{
 	try{

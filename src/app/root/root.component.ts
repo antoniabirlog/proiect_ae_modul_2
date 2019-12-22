@@ -50,6 +50,7 @@ export class RootComponent implements OnInit {
       this.http.post('https://ecommerce-module.herokuapp.com/done', this.userForm.value,{responseType: 'text'})
       .subscribe((response)=>{
         console.log('response ',response);
+		this.http.get("https://ecommerce-module.herokuapp.com/hello_world");
       })
     } else {
       alert('User registration is not valid!!')

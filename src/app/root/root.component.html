@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="logo">Create a new account!</div>
+    <div class="logo">Increase your happiness by creating an account</div>
     <div class="register-item">
       <form [formGroup]="userForm"  (ngSubmit)="onSubmit()" class="form form-register">
 
@@ -40,7 +40,14 @@
           <label class="lock" for="password"><span class="hidden">Password</span></label>
           <input name="password" formControlName="password" id="defaultRegisterFormPassword" type="password" class="form-input" placeholder="Password">
         </div>
-
+			<div class="error-messages">
+				<ng-container *ngFor="let error of error_messages.password">
+					<div class="error-message" *ngIf="userForm.get('password').hasError(error.type) && (userForm.get('password').dirty || userForm.get('password').touched)">
+						{{ error.message }}
+					</div>
+				</ng-container>
+			</div>
+			
         <div class="form-field">
           <input type="submit" value="Register">
         </div>
