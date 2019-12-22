@@ -13,23 +13,23 @@ export class RootComponent implements OnInit {
   error_messages = {
     'firstName': [
       { type: 'required', message: 'First Name is required.' },
+	  { type: 'pattern', message: 'First Name must contain letters only.' }
     ],
 
     'lastName': [
-      { type: 'required', message: 'Last Name is required.' }
+      { type: 'required', message: 'Last Name is required.' },
+	  { type: 'pattern', message: 'Last Name must contain letters only.' }
     ],
 
     'email': [
       { type: 'required', message: 'Email is required.' },
-      { type: 'minlength', message: 'Email length.' },
-      { type: 'maxlength', message: 'Email length.' },
-      { type: 'required', message: 'please enter a valid email address.' }
+      { type: 'email', message: 'Please enter a valid email address.' }
     ],
 
     'password': [
-      { type: 'required', message: 'password is required.' },
-      { type: 'minlength', message: 'password length.' },
-      { type: 'maxlength', message: 'password length.' }
+      { type: 'required', message: 'Password is required.' },
+      { type: 'minlength', message: 'Password must have minimum 8 characters' },
+      { type: 'pattern', message: 'Password must contain letters, at least on uppercase, digits, special chars' }
     ]
   }
   

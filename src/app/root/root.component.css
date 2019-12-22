@@ -7,6 +7,10 @@
   flex-direction: column;
 }
 
+.error-message {
+  color: yellow;
+}
+
 .logo{
   font-family: "museo-slab";  
   font-size:20px;

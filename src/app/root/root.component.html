@@ -7,15 +7,35 @@
               <label class="user" for="firstName"><span class="hidden">First Name</span></label>
               <input name="firstName" formControlName="firstName" id="defaultRegisterFormFirstName" type="email" class="form-input" placeholder="First Name">
         </div>
+			<div class="error-messages">
+				<ng-container *ngFor="let error of error_messages.firstName">
+					<div class="error-message" *ngIf="userForm.get('firstName').hasError(error.type) && (userForm.get('firstName').dirty || userForm.get('firstName').touched)">
+						{{ error.message }}
+					</div>
+				</ng-container>
+			</div>
 		<div class="form-field">
               <label class="user" for="lastName"><span class="hidden">Last Name</span></label>
               <input name="lastName" formControlName="lastName" id="defaultRegisterFormLastName" type="email" class="form-input" placeholder="Last Name">
         </div>
+			<div class="error-messages">
+				<ng-container *ngFor="let error of error_messages.lastName">
+					<div class="error-message" *ngIf="userForm.get('lastName').hasError(error.type) && (userForm.get('lastName').dirty || userForm.get('lastName').touched)">
+						{{ error.message }}
+					</div>
+				</ng-container>
+			</div>
         <div class="form-field">
           <label class="user" for="email"><span class="hidden">Email</span></label>
           <input name="email" formControlName="email" id="defaultRegisterFormEmail" type="email" class="form-input" placeholder="Email">
         </div>
-
+			<div class="error-messages">
+				<ng-container *ngFor="let error of error_messages.email">
+					<div class="error-message" *ngIf="userForm.get('email').hasError(error.type) && (userForm.get('email').dirty || userForm.get('email').touched)">
+						{{ error.message }}
+					</div>
+				</ng-container>
+			</div>
         <div class="form-field">
           <label class="lock" for="password"><span class="hidden">Password</span></label>
           <input name="password" formControlName="password" id="defaultRegisterFormPassword" type="password" class="form-input" placeholder="Password">
